@@ -40,5 +40,5 @@ int main()
     cout<<"There are " << count_consonants << " consonants" <<endl;
     cout<<"There are " << count_spaces << " spaces" <<endl;
     cout<<"There are " << count_characters << " characters" <<endl;
-    return 0;
+    return 0; // trial
 }
