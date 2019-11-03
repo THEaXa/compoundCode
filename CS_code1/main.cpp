@@ -343,6 +343,6 @@ else if (option == 9)
 
     }
 }
-    return 0;
+    return 0; //Returns 0 to the program
 }
 
