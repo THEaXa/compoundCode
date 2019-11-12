@@ -3,6 +3,7 @@
 #include <cmath>
 #include <ctime>
 #include <stdlib.h>
+#include <fstream>
 using namespace std;
 
 
@@ -30,6 +31,7 @@ int main()
      cout<<"[8] COUNTS NUMBER OF VOWELS AND CONSONANTS IN SENTENCE" <<endl;
      Sleep(1000);
      cout<<"[9] GET THE TIME" <<endl;
+     cout<<"[10] ALARM CLOCK" <<endl;
      Sleep(1000);
 
 
@@ -343,6 +345,34 @@ else if (option == 9)
 
     }
 }
-    return 0; //Returns 0 to the program
+else if (option == 10)
+{
+    while(1)
+    {
+            time_t pcTime = time(NULL);
+            tm* timepointer = localtime(&pcTime);
+           int pc_hours = timepointer ->tm_hour;
+           int pc_mins = timepointer ->tm_min;
+           int pc_sec = timepointer ->tm_sec;
+
+             system("CLS");
+                cout<< "The time is: " << pc_hours <<":"<< pc_mins <<":"<< pc_sec << flush;
+                Sleep(1000);
+
+            ifstream myFile;
+            int hr,mins,sec;
+
+            myFile.open("alarms.txt");
+
+            while(myFile >> hr >> mins >> sec)
+            {
+                if (pc_hours == hr && pc_mins == mins && pc_sec == sec)
+                {
+                    cout<< "\a";
+                }
+            }
+    }
+}
+    return 0; //returns
 }
 
